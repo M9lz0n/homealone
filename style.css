@@ -1,1 +1,43 @@
+body {
+    background-color: #5D5C5C;
+    margin: 0;
+    padding-top: 60px; /* Відступ для видимості контенту */
+}
+nav {
+    background-color: #505050;
+    width: 100vw; /* Навігація на всю ширину вікна */
+    padding: 10px 0; /* Відступи навколо шторки */
+    position: fixed; /* Фіксована позиція */
+    top: 0; /* Прикріплює навігацію до верхньої частини вікна */
+    left: 0; /* Прикріплює навігацію до лівої частини вікна */
+    text-align: center;
+    height: 60px; /* Встановлює висоту шторки */
+    display: flex;
+    align-items: center; /* Вертикальне центрування */
+    justify-content: center; /* Горизонтальне центрування */
+}
 
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px, 0px;
+    display: flex; /* Горизонтальне розташування елементів */
+    gap: 120px; /* Відступи між пунктами меню */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #cbcbce;
+}
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-top: 80px;
+}
