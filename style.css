@@ -41,3 +41,19 @@ h1 {
     text-align: center;
     margin-top: 80px;
 }
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px; /* Відстань між текстом і картинкою */
+    margin-left: 40px; /* Зміщення тексту вліво */
+}
+
+.header-img {
+    width: 120px; /* Задайте потрібний розмір */
+    height: auto;
+}
+
+.header-content h1, .header-content p {
+    text-align: left;
+}
