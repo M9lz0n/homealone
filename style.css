@@ -1,28 +1,29 @@
 body {
     background-color: #5D5C5C;
     margin: 0;
-    padding-top: 60px; /* Відступ для видимості контенту */
+    padding-top: 60px;
 }
+
 nav {
     background-color: #505050;
-    width: 100vw; /* Навігація на всю ширину вікна */
-    padding: 10px 0; /* Відступи навколо шторки */
-    position: fixed; /* Фіксована позиція */
-    top: 0; /* Прикріплює навігацію до верхньої частини вікна */
-    left: 0; /* Прикріплює навігацію до лівої частини вікна */
+    width: 100vw;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
     text-align: center;
-    height: 60px; /* Встановлює висоту шторки */
+    height: 60px;
     display: flex;
-    align-items: center; /* Вертикальне центрування */
-    justify-content: center; /* Горизонтальне центрування */
+    align-items: center;
+    justify-content: center;
 }
 
 nav ul {
     list-style: none;
     margin: 0;
-    padding: 0px, 0px;
-    display: flex; /* Горизонтальне розташування елементів */
-    gap: 120px; /* Відступи між пунктами меню */
+    padding: 0;
+    display: flex;
+    gap: 120px;
 }
 
 nav a {
@@ -36,45 +37,107 @@ nav a {
 nav a:hover {
     color: #cbcbce;
 }
-h1 {
-    color: #fff;
-    text-align: center;
-    margin-top: 80px;
-}
+
+/* Оновлені стилі для .header-content */
 .header-content {
     display: flex;
+    justify-content: center; /* Змінено на center для кращого вигляду */
     align-items: center;
-    justify-content: flex-start;
-    gap: 40px; /* Відстань між текстом і картинкою */
-    margin-left: 40px; /* Зміщення тексту вліво */
+    gap: 40px;
+    padding: 40px;
+    margin: 0 40px;
+    flex-wrap: wrap; /* Додано, щоб елементи переносилися на новий рядок */
 }
 
+.movie-info-and-buttons {
+    display: flex; 
+    flex-direction: column;
+    gap: 20px;
+    color: #fff;
+    max-width: 45%;
+    text-align: center;
+}
+
+.movie-info-and-buttons h1 {
+    font-size: 48px; /* Зменшуємо розмір шрифту */
+    margin: 0;
+    line-height: 1.2; /* Додаємо, щоб покращити вирівнювання */
+    white-space: nowrap; /* Ця властивість запобігає переносу тексту на новий рядок */
+    overflow: hidden; /* Приховує текст, якщо він виходить за межі контейнера */
+    text-overflow: ellipsis; /* Додає "..." якщо текст обрізається */
+}
+.movie-info-and-buttons p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left; /* Вирівнювання тексту за лівим краєм */
+}
 .header-img {
-    width: 120px; /* Задайте потрібний розмір */
-    height: auto;
+    width: 45%; /* Зменшено ширину для кращого вигляду */
+    max-width: 300px; /* Максимальна ширина для збереження якості */
+    height: auto; /* Автоматична висота для збереження пропорцій */
+    border-radius: 8px; /* Закруглені кути для картинки */
 }
 
-.header-content h1, .header-content p {
-    text-align: left;
+/* Оновлені стилі для .header-content */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Розмістить елементи по краях: текст зліва, картинка справа */
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    margin: 0 40px;
 }
 
+/* ... твій попередній код для .movie-info-and-buttons та .header-img ... */
+
+/* Оновлені стилі для кнопок */
 .button {
     background-color: #505050;
     color: #fff;
     border: none;
-    border-radius: 8px;
-    padding: 16px 32px;
+    border-radius: 8px; /* Залишаємо радіус для закруглених кутів */
+    padding: 16px 24px; /* Зменшуємо горизонтальний відступ для "квадратності" */
     font-size: 20px;
-    margin-top: 20px;
-    margin-right: 0;
-    margin-bottom: 16px;
     cursor: pointer;
     transition: background 0.2s;
-    display: block;
-    width: 260px;
+    width: auto; /* Забираємо фіксовану ширину, щоб кнопки адаптувалися до контенту */
+    min-width: 150px; /* Додаємо мінімальну ширину, щоб кнопки не були замалими */
     text-align: center;
 }
 
 .button:hover {
     background-color: #3e3e3e;
+}
+
+/* Медіа-запити для адаптивного дизайну */
+@media (max-width: 768px) {
+    /* Навігація */
+    nav ul {
+        gap: 20px; /* Зменшення відстані між пунктами меню */
+    }
+
+    /* Шапка (header) */
+    .header-content {
+        flex-direction: column; /* Елементи розташовані один під одним */
+        text-align: center;
+    }
+
+    .movie-info-and-buttons {
+        max-width: 100%; /* Текстовий блок займає всю ширину */
+    }
+
+    .movie-info-and-buttons p {
+        text-align: center; /* Центрування тексту на мобільних пристроях */
+    }
+
+    .header-img {
+        width: 80%; /* Картинка займає 80% ширини */
+    }
+
+    /* Кнопки */
+    .button {
+        width: 100%; /* Кнопки розтягуються на всю ширину */
+        margin-bottom: 10px;
+    }
 }
