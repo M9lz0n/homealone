@@ -2,6 +2,21 @@ body {
     background-color: #5D5C5C;
     margin: 0;
     padding-top: 60px;
+    font-family: Arial, sans-serif;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+
+.button-link {
+    text-decoration: none;
+    display: block;
+    width: 100%; /* Додано: посилання займає всю ширину контейнера */
+}
+
+
+.thin {
+    font-weight: 100;
 }
 
 nav {
@@ -16,6 +31,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 120px;
 }
 
 nav ul {
@@ -38,71 +54,63 @@ nav a:hover {
     color: #cbcbce;
 }
 
-/* Оновлені стилі для .header-content */
 .header-content {
     display: flex;
-    justify-content: center; /* Змінено на center для кращого вигляду */
+    justify-content: space-between;
     align-items: center;
     gap: 40px;
     padding: 40px;
     margin: 0 40px;
-    flex-wrap: wrap; /* Додано, щоб елементи переносилися на новий рядок */
+    flex-wrap: wrap;
 }
 
 .movie-info-and-buttons {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     gap: 20px;
     color: #fff;
     max-width: 45%;
     text-align: center;
+    align-items: center;
 }
 
 .movie-info-and-buttons h1 {
-    font-size: 48px; /* Зменшуємо розмір шрифту */
+    font-size: 48px;
     margin: 0;
-    line-height: 1.2; /* Додаємо, щоб покращити вирівнювання */
-    white-space: nowrap; /* Ця властивість запобігає переносу тексту на новий рядок */
-    overflow: hidden; /* Приховує текст, якщо він виходить за межі контейнера */
-    text-overflow: ellipsis; /* Додає "..." якщо текст обрізається */
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
 .movie-info-and-buttons p {
     font-size: 20px;
     line-height: 1.5;
     margin: 0;
-    text-align: left; /* Вирівнювання тексту за лівим краєм */
+    text-align: left;
 }
+
 .header-img {
-    width: 45%; /* Зменшено ширину для кращого вигляду */
-    max-width: 300px; /* Максимальна ширина для збереження якості */
-    height: auto; /* Автоматична висота для збереження пропорцій */
-    border-radius: 8px; /* Закруглені кути для картинки */
+    width: 45%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
 }
 
-/* Оновлені стилі для .header-content */
-.header-content {
-    display: flex;
-    justify-content: space-between; /* Розмістить елементи по краях: текст зліва, картинка справа */
-    align-items: center;
-    gap: 40px;
-    padding: 40px;
-    margin: 0 40px;
-}
-
-/* ... твій попередній код для .movie-info-and-buttons та .header-img ... */
-
-/* Оновлені стилі для кнопок */
 .button {
     background-color: #505050;
     color: #fff;
     border: none;
-    border-radius: 8px; /* Залишаємо радіус для закруглених кутів */
-    padding: 16px 24px; /* Зменшуємо горизонтальний відступ для "квадратності" */
+    border-radius: 8px;
+    padding: 16px 24px;
     font-size: 20px;
     cursor: pointer;
     transition: background 0.2s;
-    width: auto; /* Забираємо фіксовану ширину, щоб кнопки адаптувалися до контенту */
-    min-width: 150px; /* Додаємо мінімальну ширину, щоб кнопки не були замалими */
+    width: auto;
+    min-width: 150px;
+    text-align: center;
+    width: 100%; /* Виправлено: кнопка займатиме всю ширину */
+    min-width: 150px;
     text-align: center;
 }
 
@@ -110,34 +118,130 @@ nav a:hover {
     background-color: #3e3e3e;
 }
 
-/* Медіа-запити для адаптивного дизайну */
-@media (max-width: 768px) {
-    /* Навігація */
-    nav ul {
-        gap: 20px; /* Зменшення відстані між пунктами меню */
-    }
 
-    /* Шапка (header) */
+.movie-description p {
+    flex: 1;
+    font-size: 26px;
+    margin: 5px 50px;
+}
+
+.movie-details-content {
+    display: flex;
+    gap: 600px;
+    align-items: flex-start; 
+    margin-top: 20px;
+}
+
+.movie-details-content p {
+    flex: 1;
+    order: 2;
+}
+
+.movie-details-content .movie-image {
+    width: 400px;
+    flex-shrink: 0;
+    order: 1;
+}
+
+.movie-image {
+    margin: 90px 0;
+}
+
+.info {
+    /*font-family: Inter, sans-serif; */
+    line-height: 1.6;
+    font-size: 17px;
+    font-style: oblique;
+    margin-top: 20px;
+}
+
+.info p {
+    line-height: 1.6;
+    margin: 5px 50px;
+    white-space: nowrap;
+}
+
+body.dark-theme {
+    background-color: #5D5C5C;
+    color: white;
+}
+
+body.light-theme {
+    background-color: white;
+    color: #000000;
+}
+
+body.light-theme .movie-info-and-buttons {
+    color: #000000;
+}
+
+#theme-toggle {
+    margin: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: white;
+}
+
+body.light-theme #theme-toggle {
+    background-color: #ccc;
+    color: black;
+}
+
+.characters {
+margin-left: 40px;
+}
+.images-right {
+    float: right;
+    margin-left: 70px; /* Відступ між зображеннями та текстом */
+    display: flex;
+    flex-direction: column;
+    gap: 100px; /* Відступ між зображеннями */
+    max-width: 300px; /* Максимальна ширина контейнера */
+    margin-top: 180px;
+    margin-right: 160px; /* Відступ справа */
+}
+
+.images-right img {
+    width: 120%;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        gap: 20px;
+    }
     .header-content {
-        flex-direction: column; /* Елементи розташовані один під одним */
+        flex-direction: column;
         text-align: center;
     }
-
     .movie-info-and-buttons {
-        max-width: 100%; /* Текстовий блок займає всю ширину */
+        max-width: 100%;
     }
-
     .movie-info-and-buttons p {
-        text-align: center; /* Центрування тексту на мобільних пристроях */
+        text-align: center;
     }
-
     .header-img {
-        width: 80%; /* Картинка займає 80% ширини */
+        width: 80%;
     }
-
-    /* Кнопки */
     .button {
-        width: 100%; /* Кнопки розтягуються на всю ширину */
+        width: 100%;
         margin-bottom: 10px;
+    }
+    
+    .movie-details-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .movie-details-content p {
+        order: 1;
+    }
+    .movie-details-content .movie-image {
+        width: 80%;
+        margin: auto;
+        order: 2;
     }
 }
